@@ -1,0 +1,135 @@
+format = """
+$time\
+$hostname\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$rust\
+$character\
+"""
+
+add_newline = false
+
+[time]
+disabled = false
+format = '[\[$time\]](dimmed white) '
+time_format = "%m/%d %R"
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold red)::"
+trim_at = "."
+disabled = false
+
+[username]
+style_user = "yellow bold"
+style_root = "yellow bold"
+format = "[$user]($style)::"
+disabled = false
+show_always = true
+
+[directory]
+truncation_length = 1
+truncation_symbol = ""
+format = "[$path](bold green)[$read_only]($read_only_style) "
+
+[character]
+success_symbol = "[|](bold blue)"
+error_symbol = "[%](bold blue)"
+
+[git_branch]
+format = "\\([$branch(:$remote_branch)](white)"
+symbol = " "
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+format = " [$all_status$ahead_behind](white)\\) "
+
+[aws]
+symbol = "  "
+format = "[$symbol($version )]($style)"
+
+[buf]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[c]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[conda]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[dart]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[docker_context]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[elixir]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[elm]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[golang]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[haskell]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[java]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[julia]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[memory_usage]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[nim]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[nix_shell]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[nodejs]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[package]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[python]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[spack]
+symbol = "🅢 "
+format = "[$symbol($version )]($style)"
+
+[rust]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
