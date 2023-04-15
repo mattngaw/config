@@ -14,23 +14,23 @@ add_newline = false
 [time]
 disabled = false
 format = '[\[$time\]](dimmed white) '
-time_format = "%m/%d %R"
+time_format = "%R"
 
 [hostname]
 ssh_only = false
-format = "[$hostname](bold red)::"
+format = "[$hostname](bold cyan)::"
 trim_at = "."
 disabled = false
 
 [username]
-style_user = "yellow bold"
-style_root = "yellow bold"
+style_user = "bold blue"
+style_root = "bold blue"
 format = "[$user]($style)::"
 disabled = false
 show_always = true
 
 [directory]
-truncation_length = 1
+truncation_length = 3
 truncation_symbol = ""
 format = "[$path](bold green)[$read_only]($read_only_style) "
 

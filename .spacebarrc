@@ -27,7 +27,7 @@ spacebar -m config space_icon_strip     terminal brain earth-americas heart
 spacebar -m config space_icon           window-maximize
 spacebar -m config clock_icon           
 spacebar -m config dnd_icon             
-spacebar -m config clock_format         "%d/%m/%y %R"
+spacebar -m config clock_format         "%Y::%m::%d %R"
 spacebar -m config right_shell_icon      
 spacebar -m config right_shell_icon_color 0xff84ffbe
 spacebar -m config right_shell_command  "whoami"
