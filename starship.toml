@@ -13,7 +13,7 @@ add_newline = false
 
 [time]
 disabled = false
-format = '[\[$time\]](dimmed white) '
+format = '[\[$time\]](#888888) '
 time_format = "%R"
 
 [hostname]

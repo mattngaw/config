@@ -40,4 +40,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dE6B450
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/matto/\x2elocal/bin\x1e/Users/matto/\x2econda\x1e/Library/Frameworks/Python\x2eframework/Versions/3\x2e10/lib/python3\x2e10/site\x2dpackages\x1e/Users/matto/\x2ecargo/bin\x1e/opt/homebrew/bin\x1e/Users/matto/\x2efzf/bin
+SETUVAR fish_user_paths:/Users/matto/Documents/oss\x2dcad\x2dsuite/bin\x1e/Users/matto/\x2elocal/bin\x1e/Users/matto/\x2econda\x1e/Library/Frameworks/Python\x2eframework/Versions/3\x2e10/lib/python3\x2e10/site\x2dpackages\x1e/Users/matto/\x2ecargo/bin\x1e/opt/homebrew/bin\x1e/Users/matto/\x2efzf/bin

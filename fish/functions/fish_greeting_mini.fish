@@ -1,27 +1,9 @@
-function fish_greeting
-    if not set -q fish_greeting
-    	# Greeting messages
-	set powered_msgs \
-		"You have power over your mind - not outside events. 
-Realize this, and you will find strength."\
-		"How does it help...
-to make troubles heavier by bemoaning them?"\
-		"Those who have a 'why' to live, can bear with almost any 'how'."\
-		"One must imagine Sisyphus happy."\
-		"Memento mori"\
-        "I am meant to do great things."\
-        "Be tolerant with others and strict with yourself."
-
-	# Randomly pick a message
-	set chosen_msg (random)"%"(count $powered_msgs)
-	set chosen_msg $powered_msgs[(math $chosen_msg"+1")]
-
+function fish_greeting_mini
 	set hn (hostname -s)
 	set un (whoami)
 	set date (date "+%A, %b %d")
-    set art (cat ~/.config/fish/functions/art.txt)
 
-    set schedule (icalBuddy -f -ec "Ev's Classes","Landscape","OH" eventsToday)
+    set schedule (icalBuddy -f -npn -nc -ps "/ @ /" -eep "url" -ec "Ev's Classes","Landscape","OH" eventsToday)
 
 	# Output it to the console
 	printf (set_color -o white)"Date: "
@@ -32,10 +14,6 @@ to make troubles heavier by bemoaning them?"\
 	printf (set_color -o white)"User: "
 	printf (set_color normal)(set_color blue)"%s\n" $un
 	printf "\n"
-    printf (set_color -o white)"%s\n" $art
-    printf "\n"
-	printf (set_color normal)(set_color blue)"%s\n" $chosen_msg
-	printf "\n"
     printf (set_color -o white)"Today's Schedule:\n"
     set_color normal
     if [ "$schedule" = "" ]
@@ -43,12 +21,10 @@ to make troubles heavier by bemoaning them?"\
     else
         printf "%s\n" $schedule
     end
-    printf (set_color normal)"\n"
+    printf "\n"
     printf (set_color -o white)"TODOs:\n"(set_color normal)
 	while read line; printf "%s\n" $line; end < "/Users/matto/Library/Mobile Documents/iCloud~md~obsidian/Documents/matto/vita/todo.md"
 	printf "\n"
-
-    end
 
     if set -q fish_private_mode
         set -l line (_ "fish is running in private mode, history will not be persisted.")
