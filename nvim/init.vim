@@ -33,6 +33,14 @@ match OverLength /\%81v.\+/
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
+nmap <C-w>, <Esc>:tabp<CR>
+nmap <C-w>. <Esc>:tabn<CR>
+nmap <C-w>n <Esc>:tabnew<CR>
+nmap <C-w>- <Esc>:sp<CR>
+nmap <C-w>\| <Esc>:vsp<CR>
+
+let termdebug_wide = 1
+
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
