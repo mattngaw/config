@@ -1,7 +1,11 @@
+" source ~/.config/.vimrc "
+
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
-source ~/.config/.vimrc
+
+" Basic config options "
 set nocompatible            " disable compatibility to old-time vi
+set ttyfast                 " Speed up scrolling in Vim
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
 set hlsearch                " highlight search 
@@ -13,26 +17,24 @@ set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
-filetype plugin indent on   "allow auto-indenting depending on file type
-syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
-filetype plugin on
+set noswapfile            " disable creating swap file
 set cursorline              " highlight current cursorline
-set ttyfast                 " Speed up scrolling in Vim
-" set spell                 " enable spell check (may need to download language package)
-" set noswapfile            " disable creating swap file
-" set backupdir=~/.cache/vim " Directory to store backup files.
+set hidden " Required for operations modifying multiple buffers like rename
+filetype indent on   "allow auto-indenting depending on file type
+filetype plugin on
+syntax on                   " syntax highlighting
 
+" Unused config options "
 " set cc=80                  " set an 80 column border for good coding style
 " highlight ColorColumn ctermbg=7
 
+" Red highlighting past 80 chars "
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
+" Key rebinds "
 nmap <C-w>, <Esc>:tabp<CR>
 nmap <C-w>. <Esc>:tabn<CR>
 nmap <C-w>n <Esc>:tabnew<CR>
@@ -77,27 +79,30 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" Rust
 Plug 'rust-lang/rust.vim'
 
-" assuming you're using vim-plug: https://github.com/junegunn/vim-plug
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
 
+" Autocomplete
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+
+" Zen 1
 Plug 'folke/zen-mode.nvim'
 
+" Zen 2
 Plug 'junegunn/goyo.vim'
 
+" Discord
+Plug 'andweeb/presence.nvim'
 
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
-
-" NOTE: you need to install completion sources to get completions. Check
-" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -106,7 +111,14 @@ call plug#end()
 "   filetype indent off   " Disable file-type-specific indentation
 "   syntax off            " Disable syntax highlighting
 
-let g:ale_linters = {'rust': ['analyzer']}
+let g:ale_linters = {'rust': ['analyzer'], 'systemverilog': ['verilator'], 'ocaml': ['merlin']}
+let g:ale_verilog_verilator_options = '-y . -sv --default-language "1800-2012"'
+let g:ale_completion_enabled = 1
+
+let g:opamshare = substitute(system('opam var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+execute "set rtp+=" . "/Users/matto/.opam/default/bin/ocamlmerlin"
+autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2
 
 let g:lightline = {
       \ 'colorscheme': 'nord',

@@ -2,15 +2,16 @@ function fish_greeting
     if not set -q fish_greeting
     	# Greeting messages
 	set powered_msgs \
-		"You have power over your mind - not outside events. 
-Realize this, and you will find strength."\
-		"How does it help...
-to make troubles heavier by bemoaning them?"\
-		"Those who have a 'why' to live, can bear with almost any 'how'."\
-		"One must imagine Sisyphus happy."\
+		# "You have power over your mind - not outside events. 
+# Realize this, and you will find strength."\
+		# "How does it help...
+# to make troubles heavier by bemoaning them?"\
+		# "Those who have a 'why' to live, can bear with almost any 'how'."\
+		# "One must imagine Sisyphus happy."\
 		"Memento mori"\
         "I am meant to do great things."\
-        "Be tolerant with others and strict with yourself."
+        "Throughout Heaven and Earth, I alone am the Honored One."
+        # "Be tolerant with others and strict with yourself."\
 
 	# Randomly pick a message
 	set chosen_msg (random)"%"(count $powered_msgs)
@@ -21,7 +22,7 @@ to make troubles heavier by bemoaning them?"\
 	set date (date "+%A, %b %d")
     set art (cat ~/.config/fish/functions/art.txt)
 
-    set schedule (icalBuddy -f -ec "Ev's Classes","Landscape","OH" eventsToday)
+    set schedule (icalBuddy -f -eep "url,notes,location,attendees" -ec "Ev's Classes","Landscape","OH" eventsToday)
 
 	# Output it to the console
 	printf (set_color -o white)"Date: "

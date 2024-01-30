@@ -3,7 +3,7 @@ function fish_greeting_mini
 	set un (whoami)
 	set date (date "+%A, %b %d")
 
-    set schedule (icalBuddy -f -npn -nc -ps "/ @ /" -eep "url" -ec "Ev's Classes","Landscape","OH" eventsToday)
+    set schedule (icalBuddy -f -npn -nc -ps "/ @ /" -eep -eep "notes,location,attendees,url" -ec "Ev's Classes","Landscape","OH" eventsToday)
 
 	# Output it to the console
 	printf (set_color -o white)"Date: "
