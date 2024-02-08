@@ -119,6 +119,11 @@ let g:opamshare = substitute(system('opam var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 execute "set rtp+=" . "/Users/matto/.opam/default/bin/ocamlmerlin"
 autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2
+autocmd BufNewFile,BufRead *.l1 set syntax=c
+autocmd BufNewFile,BufRead *.l2 set syntax=c
+autocmd BufNewFile,BufRead *.l3 set syntax=c
+autocmd BufNewFile,BufRead *.l4 set syntax=c
+autocmd BufNewFile,BufRead *.l5 set syntax=c
 
 let g:lightline = {
       \ 'colorscheme': 'nord',

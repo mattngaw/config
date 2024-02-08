@@ -19,6 +19,7 @@ set -x PATH "/Users/matto/.opam/default/bin/ocamlmerlin" "$PATH"
 set -x PATH "/Users/matto/.cargo/bin/rust-analyzer" "$PATH"
 
 set -x PATH "/Users/matto/tools/sv2v" "$PATH"
+set -x PATH "/usr/local/smlnj/bin" "$PATH"
 
 set -gx TODO "/Users/matto/Library/Mobile Documents/iCloud~md~obsidian/Documents/matto/vita/todo.md"
 set -gx CONFIG "/Users/matto/.config/fish/config.fish"
