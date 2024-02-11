@@ -68,7 +68,6 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'tag': '*' }
@@ -94,6 +93,22 @@ Plug 'folke/zen-mode.nvim'
 
 " Zen 2
 Plug 'junegunn/goyo.vim'
+
+" Tim Pope
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
+" Git Gutter
+Plug 'airblade/vim-gitgutter'
+
+Plug 'kana/vim-operator-user'
+
+Plug 'rhysd/vim-clang-format'
+
+Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " Discord
 Plug 'andweeb/presence.nvim'
