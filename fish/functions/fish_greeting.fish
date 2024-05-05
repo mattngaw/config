@@ -6,13 +6,12 @@ function fish_greeting
 # Realize this, and you will find strength."\
 		# "How does it help...
 # to make troubles heavier by bemoaning them?"\
-		# "Those who have a 'why' to live, can bear with almost any 'how'."\
-		# "One must imagine Sisyphus happy."\
+		"Those who have a 'why' to live, can bear with almost any 'how'."\
+		"One must imagine Sisyphus happy."\
 		"Memento mori"\
         "I am meant to do great things."\
-        "Throughout Heaven and Earth, I alone am the Honored One."
-        # "Be tolerant with others and strict with yourself."\
-
+        "Throughout Heaven and Earth, I alone am the Honored One."\
+        "Be tolerant with others and strict with yourself."
 	# Randomly pick a message
 	set chosen_msg (random)"%"(count $powered_msgs)
 	set chosen_msg $powered_msgs[(math $chosen_msg"+1")]

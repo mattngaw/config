@@ -113,6 +113,9 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 " Discord
 Plug 'andweeb/presence.nvim'
 
+" Presenting
+Plug 'sotte/presenting.vim'
+
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
@@ -126,7 +129,7 @@ call plug#end()
 "   filetype indent off   " Disable file-type-specific indentation
 "   syntax off            " Disable syntax highlighting
 
-let g:ale_linters = {'rust': ['analyzer'], 'systemverilog': ['verilator'], 'ocaml': ['merlin']}
+let g:ale_linters = { 'rust': ['analyzer'], 'verilog': ['verible'], 'ocaml': ['merlin'] }
 let g:ale_verilog_verilator_options = '-y . -sv --default-language "1800-2012"'
 let g:ale_completion_enabled = 1
 
@@ -134,11 +137,16 @@ let g:opamshare = substitute(system('opam var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 execute "set rtp+=" . "/Users/matto/.opam/default/bin/ocamlmerlin"
 autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType c setlocal syntax=c.doxygen
 autocmd BufNewFile,BufRead *.l1 set syntax=c
 autocmd BufNewFile,BufRead *.l2 set syntax=c
 autocmd BufNewFile,BufRead *.l3 set syntax=c
 autocmd BufNewFile,BufRead *.l4 set syntax=c
 autocmd BufNewFile,BufRead *.l5 set syntax=c
+
+let g:ale_fixers = { 'ocaml': ['ocamlformat'], 'rust': ['rustfmt'], 'c': ['clang-format'] }
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+let g:ale_fix_on_save = 1
 
 let g:lightline = {
       \ 'colorscheme': 'nord',

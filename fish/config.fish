@@ -15,6 +15,7 @@ source /Users/matto/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 # The original version is saved in /Users/matto/.config/fish/config.fish.pysave
 set -x PATH "/Library/Frameworks/Python.framework/Versions/3.10/bin" "$PATH"
 
+set -x PATH "/Users/matto/Documents/verible/bin" "$PATH"
 set -x PATH "/Users/matto/.opam/default/bin/ocamlmerlin" "$PATH"
 set -x PATH "/Users/matto/.cargo/bin/rust-analyzer" "$PATH"
 
@@ -36,3 +37,5 @@ alias vim "nvim"
 alias wipe "clear; fish_greeting_mini"
 alias todo "nvim \"$TODO\""
 alias today "icalBuddy -f -npn -nc -ps \"/ @ /\" -eep \"url\" -ec \"Ev's Classes\",\"OH\" eventsToday"
+alias todos "grep -rni 'TODO' *"
+alias matto "nvim ~/.log"
